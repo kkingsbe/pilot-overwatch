@@ -1,18 +1,22 @@
 <script>
 	export let name;
+	import BackgroundImage from './components/BackgroundImage.svelte'
+	import SignInModal from './components/SignInModal.svelte'
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<BackgroundImage src="../res/background.jpg"/>
+	<div class="container">
+		<SignInModal></SignInModal>
+	</div>
 </main>
 
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
 		margin: 0 auto;
+		height: 100%;
+		width: 100%;
 	}
 
 	h1 {
@@ -22,9 +26,15 @@
 		font-weight: 100;
 	}
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+	.container {
+		min-height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 </style>
